@@ -4,15 +4,13 @@ import {
   Text,
   View,
   TextInput,
-  FlatList,
   TouchableOpacity,
 } from "react-native";
-import FlatButton from "./FlatButton";
 
-export default function Window() {
+export default function Screen() {
   return (
-    <View style={styles.Window}>
-      <TextInput style={styles.WindowText} showSoftInputOnFocus={false}>
+    <View style={styles.Screen}>
+      <TextInput style={styles.ScreenText} showSoftInputOnFocus={false}>
         None
       </TextInput>
       <TextInput style={styles.ResultText} showSoftInputOnFocus={false}>
@@ -37,13 +35,13 @@ export default function Window() {
 }
 
 const styles = StyleSheet.create({
-  Window: {
+  Screen: {
     flex: 5,
     backgroundColor: "white",
     width: "98%",
     marginTop: 5,
   },
-  WindowText: {
+  ScreenText: {
     flex: 4,
     textAlign: "right",
     fontSize: 60,
