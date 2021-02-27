@@ -1,12 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import { getStatusBarHeight } from "react-native-status-bar-height";
+import TitleBar from "./TitleBar";
+import Window from "./Window";
+import Buttons from "./Buttons";
 
 export default function App() {
+  const [isLoading, setState] = useState(true);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <StatusBar />
+      <TitleBar />
+      <Window />
+      <Buttons />
+      <StatusBar hidden={false} backgroundColor="white" />
     </View>
   );
 }
@@ -14,8 +23,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: getStatusBarHeight() + 15,
+    backgroundColor: "#bdc3c7",
+  },
+  statusBar: {
+    backgroundColor: "white",
   },
 });
